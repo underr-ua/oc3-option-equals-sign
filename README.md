@@ -1,0 +1,25 @@
+# Option Equals Sign
+
+## Description
+The Option Equals Sign extension is for Opencart 3 CMS. It allows to use the equals sign prefix with product options.
+
+## Features
+* The equals sign prefix for product option prices, points and weight
+* OCMOD - does not change original files
+
+## Live demo
+* [Front](http://ocmod.freevar.com/oc3020/a/index.php?route=product/product&product_id=41)
+* [Admin](http://ocmod.freevar.com/oc3020/a/admin/index.php?route=catalog/product)
+
+## Links
+* [Opencart Marketplace](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=34383)
+* [Homepage](https://underr.space/en/notes/projects/project-005.html)
+* [Github](https://git.io/JvlGE)
+
+## License
+* Licensed under [MIT](https://git.io/JvlGz)
+
+## Related extensions
+* [Live Options+](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=36005)
+* [Live Products](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=35460)
+* [Journal 3 Equals Sign](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=35460)

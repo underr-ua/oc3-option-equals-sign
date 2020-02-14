@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+This file is part of "Breadcrumbs+" project and subject to the terms
+and conditions defined in file "EULA.txt", which is part of this source
+code package and also available on the project page: https://git.io/JvlGE.
+-->
+
+<modification>
+	<name>[underr] Option Equals Sign</name>
+	<code>option-equals-sign</code>
+	<version>2.0.1</version>
+	<author>Andrii Burkatskyi aka underr</author>
+	<link>https://git.io/JvlGE</link>
+
+	<file path="system/library/cart/cart.php" error="log">
+		<operation error="log">
+			<search>
+				<![CDATA[$stock = true;]]>
+			</search>
+			<add position="after">
+				<![CDATA[			// << Option Equals Sign
+			$has_eql_price = false;
+			$has_eql_points = false;
+			$has_eql_weight = false;
+			// Option Equals Sign >>]]>
+			</add>
+		</operation>
+
+		<!--  Add equals sign -->
+
+		<operation error="log">
+			<search>
+				<![CDATA[$option_value_query->row['price_prefix'] == '+']]>
+			</search>
+			<add position="replace">
+				<![CDATA[$option_value_query->row['price_prefix'] == '+' || $option_value_query->row['price_prefix'] == '=']]>
+			</add>
+		</operation>
+
+		<operation error="log">
+			<search>
+				<![CDATA[$option_value_query->row['points_prefix'] == '+']]>
+			</search>
+			<add position="replace">
+				<![CDATA[$option_value_query->row['points_prefix'] == '+' || $option_value_query->row['points_prefix'] == '=']]>
+			</add>
+		</operation>
+
+		<operation error="log">
+			<search>
+				<![CDATA[$option_value_query->row['weight_prefix'] == '+']]>
+			</search>
+			<add position="replace">
+				<![CDATA[$option_value_query->row['weight_prefix'] == '+' || $option_value_query->row['weight_prefix'] == '=']]>
+			</add>
+		</operation>
+
+		<!-- Add sum fixes -->
+
+		<operation error="log">
+			<search>
+				<![CDATA[$option_value_query->row['price_prefix'] == '+' || $option_value_query->row['price_prefix'] == '=']]>
+			</search>
+			<add position="after">
+				<![CDATA[										if ($option_value_query->row['price_prefix'] == '=' && $option_query->row['type'] != 'checkbox') {
+											$has_eql_price = true;
+										}
+				]]>
+			</add>
+		</operation>
+
+		<operation error="log">
+			<search>
+				<![CDATA[$option_value_query->row['points_prefix'] == '+' || $option_value_query->row['points_prefix'] == '=']]>
+			</search>
+			<add position="after">
+				<![CDATA[										if ($option_value_query->row['points_prefix'] == '=' && $option_query->row['type'] != 'checkbox') {
+											$has_eql_points = true;
+										}
+				]]>
+			</add>
+		</operation>
+
+		<operation error="log">
+			<search>
+				<![CDATA[$option_value_query->row['weight_prefix'] == '+' || $option_value_query->row['weight_prefix'] == '=']]>
+			</search>
+			<add position="after">
+				<![CDATA[										if ($option_value_query->row['weight_prefix'] == '=' && $option_query->row['type'] != 'checkbox') {
+											$has_eql_weight = true;
+										}
+				]]>
+			</add>
+		</operation>
+
+		<!--  -->
+
+		<operation error="log">
+			<search>
+				<![CDATA[$product_data[] = array(]]>
+			</search>
+			<add position="before">
+				<![CDATA[
+				// << Option Equals Sign
+				if ($has_eql_price) {
+					$option_price -= $price;
+				}
+
+				if ($product_query->row['points'] && $has_eql_points) {
+					$option_points -= $product_query->row['points'];
+				}
+
+				if ($has_eql_weight) {
+					$option_weight -= $product_query->row['weight'];
+				}
+				// Option Equals Sign >>
+				]]>
+			</add>
+		</operation>
+	</file>
+
+	<file path="admin/controller/sale/order.php" error="log">
+		<operation error="log" info="fix for OC v3.0.2.0 and below">
+			<ignoreif regex="false"><![CDATA[$option_weight = 0;]]></ignoreif>
+			<search>
+				<![CDATA[$option_weight = '';]]>
+			</search>
+			<add position="replace">
+				<![CDATA[$option_weight = 0;]]>
+			</add>
+		</operation>
+	</file>
+
+	<file path="admin/controller/sale/order.php" error="log">
+		<operation error="log">
+			<search>
+				<![CDATA[$option_weight = 0;]]>
+			</search>
+			<add position="after">
+				<![CDATA[					$has_eql_weight = false;  // Option Equals Sign]]>
+			</add>
+		</operation>
+
+		<operation error="log">
+			<search>
+				<![CDATA[$option_weight -= $product_option_value_info['weight'];]]>
+			</search>
+			<add position="after">
+				<![CDATA[								// << Option Equals Sign
+								} elseif ($product_option_value_info['weight_prefix'] == '=') {
+									$option_weight += $product_option_value_info['weight'];
+
+									if ($option['type'] != 'checkbox') {
+										$has_eql_weight = true;
+									}
+								// Option Equals Sign >>
+								]]>
+			</add>
+		</operation>
+		<operation error="log">
+			<search>
+				<![CDATA[$product_data[] = array(]]>
+			</search>
+			<add position="before">
+				<![CDATA[						// << Option Equals Sign
+						if ($has_eql_weight) {
+							$option_weight -= $product_info['weight'];
+						}
+						// Option Equals Sign >>
+						]]>
+			</add>
+		</operation>
+	</file>
+
+
+	<file path="admin/view/template/catalog/product_form.twig" error="log">
+		<operation error="log">
+			<search>
+				<![CDATA[{% if product_option_value.price_prefix == '-' %}]]>
+				</search>
+			<add position="before">
+				<![CDATA[
+								{% if product_option_value.price_prefix == '=' %}
+
+
+								<option value="=" selected="selected">=</option>
+
+
+								  {% else %}
+
+
+								<option value="=">=</option>
+
+
+								  {% endif %}
+						]]>
+			</add>
+		</operation>
+
+		<operation error="log">
+			<search>
+				<![CDATA[{% if product_option_value.points_prefix == '-' %}]]>
+			</search>
+			<add position="before">
+				<![CDATA[
+								  {% if product_option_value.points_prefix == '=' %}
+
+
+								<option value="=" selected="selected">=</option>
+
+
+								  {% else %}
+
+
+								<option value="=">=</option>
+
+
+								  {% endif %}
+						]]>
+			</add>
+		</operation>
+
+		<operation error="log">
+			<search>
+				<![CDATA[{% if product_option_value.weight_prefix == '-' %}]]>
+			</search>
+			<add position="before">
+				<![CDATA[
+								  {% if product_option_value.weight_prefix == '=' %}
+
+
+								<option value="=" selected="selected">=</option>
+
+
+								  {% else %}
+
+
+								<option value="=">=</option>
+
+
+								  {% endif %}
+							]]>
+			</add>
+		</operation>
+
+		<operation error="log">
+			<search>
+				<![CDATA[<option value="+">+</option>';]]>
+			</search>
+			<add position="after">
+				<![CDATA[  html += '    <option value="=">=</option>';]]>
+			</add>
+		</operation>
+
+	</file>
+</modification>
