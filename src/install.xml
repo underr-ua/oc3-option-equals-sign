@@ -63,7 +63,7 @@ code package and also available on the project page: https://git.io/JvlGE.
 				<![CDATA[$option_value_query->row['price_prefix'] == '+' || $option_value_query->row['price_prefix'] == '=']]>
 			</search>
 			<add position="after">
-				<![CDATA[										if ($option_value_query->row['price'] && $option_value_query->row['price_prefix'] == '=' && $option_query->row['type'] != 'checkbox') {
+				<![CDATA[										if ($option_value_query->row['price'] != 0 && $option_value_query->row['price_prefix'] == '=' && $option_query->row['type'] != 'checkbox') {
 											$has_eql_price = true;
 										}
 				]]>
@@ -75,7 +75,7 @@ code package and also available on the project page: https://git.io/JvlGE.
 				<![CDATA[$option_value_query->row['points_prefix'] == '+' || $option_value_query->row['points_prefix'] == '=']]>
 			</search>
 			<add position="after">
-				<![CDATA[										if ($option_value_query->row['points'] && $option_value_query->row['points_prefix'] == '=' && $option_query->row['type'] != 'checkbox') {
+				<![CDATA[										if ($option_value_query->row['points']  != 0 && $option_value_query->row['points_prefix'] == '=' && $option_query->row['type'] != 'checkbox') {
 											$has_eql_points = true;
 										}
 				]]>
@@ -87,7 +87,7 @@ code package and also available on the project page: https://git.io/JvlGE.
 				<![CDATA[$option_value_query->row['weight_prefix'] == '+' || $option_value_query->row['weight_prefix'] == '=']]>
 			</search>
 			<add position="after">
-				<![CDATA[										if ($option_value_query->row['weight'] && $option_value_query->row['weight_prefix'] == '=' && $option_query->row['type'] != 'checkbox') {
+				<![CDATA[										if ($option_value_query->row['weight'] != 0 && $option_value_query->row['weight_prefix'] == '=' && $option_query->row['type'] != 'checkbox') {
 											$has_eql_weight = true;
 										}
 				]]>
