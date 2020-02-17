@@ -22,4 +22,4 @@ The Option Equals Sign extension is for Opencart 3 CMS. It allows to use the equ
 ## Related extensions
 * [Live Options+](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=36005)
 * [Live Products](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=35460)
-* [Journal 3 Equals Sign](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=35460)
+* [Journal3 Equals Sign](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=38532)

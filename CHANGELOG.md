@@ -1,5 +1,9 @@
 # Change log
 
+## [2.1.0] - 2020.02.17:
+### Fixed
+    - Calculation for options equal to 0
+
 ## [2.0.1] - 2020.02.08:
 ### Added
     - Compatibility with a number of other modules.

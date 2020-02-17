@@ -66,7 +66,7 @@ pwd: git
 # exclude src dir for paid modules and add for free
 git:
 	@if [ ! -z $(ignore_src) ]; then \
-		grep -xqF -- "$(src_dir)" ".gitignore" || echo "$(src_dir)" >> ".gitignore"; \
+		grep -xqF -- "$(src_dir)" ".gitignore" || printf "\n$(src_dir)\n" >> ".gitignore"; \
 	else \
 		grep -v "$(src_dir)" ".gitignore" > ".gitignore.tmp"; \
 		mv -f .gitignore.tmp .gitignore; \
