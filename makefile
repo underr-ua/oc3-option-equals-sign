@@ -49,7 +49,7 @@ enc: pwd
 	@if [ -f "$(pwd_file)" ]; then \
 		echo Making FCL...; \
 		mkdir -p "$(bin_dir)"; \
-		fcl make -q -f -E$(bin_dir) -E$(img_dir) -E.git -Ehideg.pwd "$(bin_dir)/$(mod_name)"; \
+		fcl make -q -f -E.git -E"$(bin_dir)" -E"$(img_dir)" -E"$(zip_dir)" -E"$(pwd_file)" "$(bin_dir)/$(mod_name)"; \
 		echo Making FCL [DONE]; \
 		echo Making HIDEG...; \
 		hideg "$(bin_dir)/$(mod_name).fcl"; \
