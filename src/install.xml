@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-This file is part of "Breadcrumbs+" project and subject to the terms
-and conditions defined in file "EULA.txt", which is part of this source
+This file is part of "Option Equals Sign" project and subject to the terms
+and conditions defined in file "LICENSE.txt", which is part of this source
 code package and also available on the project page: https://git.io/JvlGE.
 -->
 
 <modification>
 	<name>[underr] Option Equals Sign</name>
 	<code>option-equals-sign</code>
-	<version>2.1.0</version>
+	<version>2.1.1</version>
 	<author>Andrii Burkatskyi aka underr</author>
 	<link>https://git.io/JvlGE</link>
 
@@ -19,11 +19,11 @@ code package and also available on the project page: https://git.io/JvlGE.
 				<![CDATA[$stock = true;]]>
 			</search>
 			<add position="after">
-				<![CDATA[			// << Option Equals Sign
+				<![CDATA[			/// << Option Equals Sign
 			$has_eql_price = false;
 			$has_eql_points = false;
 			$has_eql_weight = false;
-			// Option Equals Sign >>]]>
+			/// << Option Equals Sign]]>
 			</add>
 		</operation>
 
@@ -102,7 +102,7 @@ code package and also available on the project page: https://git.io/JvlGE.
 			</search>
 			<add position="before">
 				<![CDATA[
-				// << Option Equals Sign
+				/// << Option Equals Sign
 				if ($has_eql_price) {
 					$option_price -= $price;
 				}
@@ -114,7 +114,7 @@ code package and also available on the project page: https://git.io/JvlGE.
 				if ($has_eql_weight) {
 					$option_weight -= $product_query->row['weight'];
 				}
-				// Option Equals Sign >>
+				/// << Option Equals Sign
 				]]>
 			</add>
 		</operation>
@@ -147,28 +147,23 @@ code package and also available on the project page: https://git.io/JvlGE.
 				<![CDATA[$option_weight -= $product_option_value_info['weight'];]]>
 			</search>
 			<add position="after">
-				<![CDATA[								// << Option Equals Sign
+				<![CDATA[								/// << Option Equals Sign
 								} elseif ($product_option_value_info['weight_prefix'] == '=') {
 									$option_weight += $product_option_value_info['weight'];
 
 									if ($option['type'] != 'checkbox') {
 										$has_eql_weight = true;
 									}
-								// Option Equals Sign >>
+								/// << Option Equals Sign
 								]]>
 			</add>
 		</operation>
 		<operation error="log">
 			<search>
-				<![CDATA[$product_data[] = array(]]>
+				<![CDATA[(float)$option_weight]]>
 			</search>
-			<add position="before">
-				<![CDATA[						// << Option Equals Sign
-						if ($has_eql_weight) {
-							$option_weight -= $product_info['weight'];
-						}
-						// Option Equals Sign >>
-						]]>
+			<add position="replace">
+				<![CDATA[(!empty($has_eql_weight) ? (float)$option_weight - $product_info['weight'] : (float)$option_weight)]]>
 			</add>
 		</operation>
 	</file>

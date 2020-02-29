@@ -1,5 +1,9 @@
 # Change log
 
+## [2.1.1] - 2020.02.29:
+### Fixed
+- Weight calculation for shipping list in admin
+
 ## [2.1.0] - 2020.02.17:
 ### Fixed
 - Calculation for options equal to 0
