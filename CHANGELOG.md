@@ -1,5 +1,9 @@
 # Change log
 
+## [2.2.1] - 2020.05.15:
+### Added
+- Support for OC v2.1+
+
 ## [2.1.1] - 2020.02.29:
 ### Fixed
 - Weight calculation for shipping list in admin

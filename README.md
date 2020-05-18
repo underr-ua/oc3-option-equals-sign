@@ -1,7 +1,7 @@
 # Option Equals Sign
 
 ## Description
-The Option Equals Sign extension is for Opencart 3 CMS. It allows to use the equals sign prefix with product options.
+The Option Equals Sign extension is for Opencart CMS. It allows to use the equals sign prefix with product options. Compatible with Opencart versions 2.1.x, 3.x.
 
 ## Features
 * The equals sign prefix for product option prices, points and weight
