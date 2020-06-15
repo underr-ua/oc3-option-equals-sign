@@ -1,8 +1,12 @@
 # Change log
 
+## [2.2.2] - 2020.06.09:
+### Fixed
+- Compatibility with 2.1+ versions
+
 ## [2.2.1] - 2020.05.15:
 ### Added
-- Support for OC v2.1+
+- Compatibility with 2.1+ versions
 
 ## [2.1.1] - 2020.02.29:
 ### Fixed
