@@ -3,15 +3,15 @@
 <!--
 This file is part of "Option Equals Sign" project and subject to the terms
 and conditions defined in file "LICENSE.txt", which is part of this source
-code package and also available on the project page: https://git.io/JvlGE.
+code package and also available on the project page: https://git.io/JfjkZ.
 -->
 
 <modification>
 	<name>[underr] Option Equals Sign</name>
 	<code>option-equals-sign</code>
-	<version>2.2.2</version>
+	<version>2.2.3</version>
 	<author>Andrii Burkatskyi aka underr</author>
-	<link>https://git.io/JvlGE</link>
+	<link>https://git.io/JfjkZ</link>
 
 	<file path="system/library/cart/cart.php" error="log">
 		<operation error="log">
@@ -63,7 +63,7 @@ code package and also available on the project page: https://git.io/JvlGE.
 				<![CDATA[$option_value_query->row['price_prefix'] == '+' || $option_value_query->row['price_prefix'] == '=']]>
 			</search>
 			<add position="after">
-				<![CDATA[										if ($option_value_query->row['price'] != 0 && $option_value_query->row['price_prefix'] == '=' && $option_query->row['type'] != 'checkbox') {
+				<![CDATA[										if ($option_value_query->row['price'] != 0 && $option_value_query->row['price_prefix'] == '=') {
 											$has_eql_price = true;
 										}
 				]]>
@@ -75,7 +75,7 @@ code package and also available on the project page: https://git.io/JvlGE.
 				<![CDATA[$option_value_query->row['points_prefix'] == '+' || $option_value_query->row['points_prefix'] == '=']]>
 			</search>
 			<add position="after">
-				<![CDATA[										if ($option_value_query->row['points']  != 0 && $option_value_query->row['points_prefix'] == '=' && $option_query->row['type'] != 'checkbox') {
+				<![CDATA[										if ($option_value_query->row['points']  != 0 && $option_value_query->row['points_prefix'] == '=') {
 											$has_eql_points = true;
 										}
 				]]>
@@ -87,7 +87,7 @@ code package and also available on the project page: https://git.io/JvlGE.
 				<![CDATA[$option_value_query->row['weight_prefix'] == '+' || $option_value_query->row['weight_prefix'] == '=']]>
 			</search>
 			<add position="after">
-				<![CDATA[										if ($option_value_query->row['weight'] != 0 && $option_value_query->row['weight_prefix'] == '=' && $option_query->row['type'] != 'checkbox') {
+				<![CDATA[										if ($option_value_query->row['weight'] != 0 && $option_value_query->row['weight_prefix'] == '=') {
 											$has_eql_weight = true;
 										}
 				]]>
@@ -150,9 +150,6 @@ code package and also available on the project page: https://git.io/JvlGE.
 								} elseif ($product_option_value_info['weight_prefix'] == '=') {
 									$option_weight += $product_option_value_info['weight'];
 
-									if ($option['type'] != 'checkbox') {
-										$has_eql_weight = true;
-									}
 								/// << Option Equals Sign
 								]]>
 			</add>

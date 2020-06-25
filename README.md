@@ -14,12 +14,12 @@ The Option Equals Sign extension is for Opencart CMS versions 2.1.x-3.0.x. It al
 ## Links
 * [Opencart Marketplace](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=34383)
 * [Homepage](https://underr.space/en/notes/projects/project-005.html)
-* [Github](https://git.io/JvlGE)
+* [Github](https://git.io/JfjkZ)
 
 ## License
-* Licensed under [MIT](https://git.io/JvlGz)
+* Licensed under [MIT](https://git.io/JfjkW) License
 
 ## Related extensions
 * [Live Options+](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=36005)
-* [Live Products](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=35460)
+* [Live Options Ultimate](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=35460)
 * [Journal3 Equals Sign](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=38532)

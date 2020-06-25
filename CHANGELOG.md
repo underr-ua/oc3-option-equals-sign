@@ -1,5 +1,9 @@
 # Change log
 
+## [2.2.3] - 2020.06.23:
+### Changed
+- Checkbox options behaviour
+
 ## [2.2.2] - 2020.06.09:
 ### Fixed
 - Compatibility with 2.1+ versions
