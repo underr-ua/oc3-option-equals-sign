@@ -1,8 +1,8 @@
 # Change log
 
-## [2.2.3] - 2020.06.23:
-### Changed
-- Checkbox options behaviour
+## [2.3.0] - 2020.06.23:
+### Added
+- Calculation of checkbox-options with an equals sign
 
 ## [2.2.2] - 2020.06.09:
 ### Fixed
