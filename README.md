@@ -17,7 +17,7 @@ The Option Equals Sign extension is for Opencart CMS versions 2.1.x-3.0.x. It al
 * [Github](https://git.io/JfjkZ)
 
 ## License
-* Licensed under [MIT](https://git.io/JfjkW) License
+* Licensed under the [MIT License](https://git.io/JfjkW)
 
 ## Related extensions
 * [Live Options+](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=36005)
