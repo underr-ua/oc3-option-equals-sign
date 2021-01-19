@@ -9,7 +9,7 @@ code package and also available on the project page: https://git.io/JfjkZ.
 <modification>
 	<name>[underr] Option Equals Sign</name>
 	<code>option-equals-sign</code>
-	<version>2.3.0</version>
+	<version>2.3.1</version>
 	<author>Andrii Burkatskyi aka underr</author>
 	<link>https://git.io/JfjkZ</link>
 
@@ -179,7 +179,7 @@ code package and also available on the project page: https://git.io/JfjkZ.
 
 <!-- OC 2.1+ -->
 		<operation error="log">
-	    	<ignoreif regex="false" info="for 2.1.x"><![CDATA[{%]]></ignoreif>
+	    	<ignoreif regex="false" info="for 2.1.x"><![CDATA[{{ header }}]]></ignoreif>
 			<search>
 		  		<![CDATA[<?php if ($product_option_value['price_prefix'] == '-') { ?>]]>
 				</search>
@@ -193,7 +193,7 @@ code package and also available on the project page: https://git.io/JfjkZ.
 		</operation>
 
 		<operation error="log">
-			<ignoreif regex="false" info="for 2.1.x"><![CDATA[{%]]></ignoreif>
+			<ignoreif regex="false" info="for 2.1.x"><![CDATA[{{ header }}]]></ignoreif>
 			<search>
 		  		<![CDATA[<?php if ($product_option_value['points_prefix'] == '-') { ?>]]>
 				</search>
@@ -207,7 +207,7 @@ code package and also available on the project page: https://git.io/JfjkZ.
 		</operation>
 
 		<operation error="log">
-			<ignoreif regex="false" info="for 2.1.x"><![CDATA[{%]]></ignoreif>
+			<ignoreif regex="false" info="for 2.1.x"><![CDATA[{{ header }}]]></ignoreif>
 			<search>
 		  		<![CDATA[<?php if ($product_option_value['weight_prefix'] == '-') { ?>]]>
 				</search>
@@ -222,7 +222,7 @@ code package and also available on the project page: https://git.io/JfjkZ.
 
 <!-- OC 3.0+ -->
 		<operation error="log">
-			<ignoreif regex="false" info="for 3.0.x"><![CDATA[<?php]]></ignoreif>
+			<ignoreif regex="false" info="for 3.0.x"><![CDATA[<?php echo $header; ?>]]></ignoreif>
 			<search>
 				<![CDATA[{% if product_option_value.price_prefix == '-' %}]]>
 				</search>
@@ -246,7 +246,7 @@ code package and also available on the project page: https://git.io/JfjkZ.
 		</operation>
 
 		<operation error="log">
-			<ignoreif regex="false" info="for 3.0.x"><![CDATA[<?php]]></ignoreif>
+			<ignoreif regex="false" info="for 3.0.x"><![CDATA[<?php echo $header; ?>]]></ignoreif>
 			<search>
 				<![CDATA[{% if product_option_value.points_prefix == '-' %}]]>
 			</search>
@@ -270,7 +270,7 @@ code package and also available on the project page: https://git.io/JfjkZ.
 		</operation>
 
 		<operation error="log">
-			<ignoreif regex="false" info="for 3.0.x"><![CDATA[<?php]]></ignoreif>
+			<ignoreif regex="false" info="for 3.0.x"><![CDATA[<?php echo $header; ?>]]></ignoreif>
 			<search>
 				<![CDATA[{% if product_option_value.weight_prefix == '-' %}]]>
 			</search>
@@ -294,7 +294,7 @@ code package and also available on the project page: https://git.io/JfjkZ.
 		</operation>
 
 		<operation error="log">
-			<!-- <ignoreif regex="false" info="for 3.0.x"><![CDATA[<?php]]></ignoreif> -->
+			<!-- <ignoreif regex="false" info="for 3.0.x"><![CDATA[<?php echo $header; ?>]]></ignoreif> -->
 			<search>
 				<![CDATA[<option value="+">+</option>';]]>
 			</search>

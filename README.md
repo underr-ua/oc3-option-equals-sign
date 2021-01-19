@@ -23,3 +23,8 @@ The Option Equals Sign extension is for Opencart CMS versions 2.1.x-3.0.x. It al
 * [Live Options+](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=36005)
 * [Live Options Ultimate](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=35460)
 * [Journal3 Equals Sign](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=38532)
+
+## Compatible extensions with additional features
+* A special edition [Journal3 Equals Sign](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=38532) extension for Journal3 template
+* Install live price update based on selected options and product quantity with the [Live Product+](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=36005) module
+* Apply special offers and discounts to option prices with the [Flexible Options+](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=40391) module

@@ -1,5 +1,9 @@
 # Change log
 
+## [2.3.1] - 2021.01.20:
+### Fixed
+- 2.x/3.x compatibility
+
 ## [2.3.0] - 2020.06.23:
 ### Added
 - Calculation of checkbox-options with an equals sign
